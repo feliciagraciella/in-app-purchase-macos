@@ -16,11 +16,11 @@ struct ContentView: View {
                 
                 List {
                     NavigationLink(destination: FreeView()) {
-                        Text("Page 1")
+                        Text("Free")
                     }
                     
                     NavigationLink(destination: PremiumView()) {
-                        Text("Page 2")
+                        Text("Pro")
                     }
                 }
                 
