@@ -59,7 +59,7 @@ struct StoreView: View {
                         SubscriptionItemView(product: product, selectedProduct: $selectedProduct)
                     }
                     .scrollDisabled(true)
-                    .listStyle(.plain)
+//                    .listStyle(.plain)
 //                    .listRowSpacing(2.5)
                     .frame(height: CGFloat(subscriptionsManager.products.count) * 90, alignment: .bottom)
                     
@@ -119,7 +119,7 @@ struct SubscriptionItemView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 12.5)
                 .stroke(selectedProduct == product ? .blue : .black, lineWidth: 1.0)
-                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
+//                .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
             
             HStack {
                 VStack(alignment: .leading, spacing: 8.5) {
@@ -148,4 +148,6 @@ struct SubscriptionItemView: View {
 
 #Preview {
     StoreView()
+        .environmentObject(EntitlementManager())
+        .environmentObject(SubscriptionsManager(entitlementManager: EntitlementManager()))
 }
